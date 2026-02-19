@@ -33,7 +33,7 @@ searchBtn.addEventListener("click", async () => {
     conditionDisplay.textContent = "Could not find city.";
   }
 });
-cityInput.AddEventListener("keypress",(event)=> {
+cityInput.addEventListener("keypress", (event) => {
     if(event.key === "Enter"){
         searchBtn.click();
         }

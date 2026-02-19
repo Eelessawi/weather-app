@@ -34,7 +34,7 @@ searchBtn.addEventListener("click", async () => {
   }
 });
 cityInput.AddEventListener("keypress",(event)=> {
-    if(Keypressed === "Enter"){
+    if(event.key === "Enter"){
         searchBtn.click();
         }
 });

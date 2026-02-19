@@ -11,6 +11,9 @@ searchBtn.addEventListener("click", async () => {
   const typedCity = cityInput.value; 
   
   try {
+    cityDisplay.textContent = "Loading...";
+    tempDisplay.textContent = "--";
+    conditionDisplay.textContent = "--";
     // 3. Fetch the data dynamically
     const response = await fetch(`https://wttr.in/${typedCity}?format=j1`);
     const result = await response.json();
@@ -29,4 +32,9 @@ searchBtn.addEventListener("click", async () => {
     tempDisplay.textContent = "--";
     conditionDisplay.textContent = "Could not find city.";
   }
+});
+cityInput.AddEventListener("keypress",(event)=> {
+    if(Keypressed === "Enter"){
+        searchBtn.click();
+        }
 });
